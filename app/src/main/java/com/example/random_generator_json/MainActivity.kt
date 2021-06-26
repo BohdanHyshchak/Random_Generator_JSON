@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                 return@launchWhenCreated
             }
             if(response.isSuccessful && response.body() != null){
-                binding.tvNumber.text = response.body()!!.random.toString()
+                binding.tvNumber.text = response.body()!![0].random.toString()
             }
         }
     }
