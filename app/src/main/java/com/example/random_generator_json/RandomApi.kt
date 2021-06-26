@@ -5,6 +5,6 @@ import retrofit2.http.GET
 
 interface RandomApi {
     @GET("/csrng/csrng.php")
-    fun getRandomNumber(): Response<List<RandomNumberItem>>
+    suspend fun getRandomNumber(): Response<List<RandomNumberItem>>
 
 }

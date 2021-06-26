@@ -2,6 +2,7 @@ package com.example.random_generator_json
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.lifecycleScope
 import com.example.random_generator_json.databinding.ActivityMainBinding
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
 
     fun onButton(view: View){
         lifecycleScope.launchWhenCreated {
+            Log.d(TAG, "coroutine starts")
             val response = try {
                 RetrofitInstance.api.getRandomNumber()
             }catch (e: IOException){
